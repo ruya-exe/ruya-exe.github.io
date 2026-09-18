@@ -236,6 +236,17 @@ main {
   line-height: 1;
 }
 
+.nav-svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.pixel-icon {
+  fill: currentColor;
+  shape-rendering: crispEdges;
+}
+
 .nav-label {
   font-size: 11px;
   text-transform: lowercase;

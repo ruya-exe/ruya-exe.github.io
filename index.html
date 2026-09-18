@@ -3,11 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rüya.exe</title>
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="RÜYA.EXE — a weird little personal corner of the web.">
+  <title>RÜYA.EXE</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>RÜYA.EXE</h1>
-  <p>booting...</p>
+  <div class="site">
+    <header class="app-bar">
+      <span class="app-heart" aria-hidden="true">♥</span>
+      <span class="app-title">RÜYA.EXE</span>
+    </header>
+
+    <main>
+      <section class="profile-row" aria-label="profile summary">
+        <div class="avatar-placeholder" aria-hidden="true">◎</div>
+        <div class="status-box">what's on your mind? placeholder :)</div>
+      </section>
+
+      <div class="online">• online!</div>
+
+      <section class="web-panel" aria-labelledby="web-title">
+        <div class="panel-title" id="web-title">RÜYA'S WEB</div>
+
+        <div class="chaos-stage">
+          <canvas id="lorenz-canvas" aria-label="Animated Lorenz strange attractor"></canvas>
+          <div class="muffet-placeholder" aria-hidden="true">muffet goes here ♡</div>
+        </div>
+
+        <div class="web-footer">
+          <div class="world-labels">
+            <span>WORLD DOMINATION</span>
+            <span>status: underway</span>
+          </div>
+
+          <div class="progress-row">
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="progress-number">0.04%</span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="nav-grid" aria-label="RÜYA.EXE sections">
+        <button class="nav-button" type="button" data-target="about-drawer" aria-expanded="false">
+          <span class="nav-icon" aria-hidden="true">ⓘ</span>
+          <span class="nav-label">about</span>
+        </button>
+
+        <button class="nav-button" type="button" data-target="guestbook-drawer" aria-expanded="false">
+          <span class="nav-icon" aria-hidden="true">✎</span>
+          <span class="nav-label">guestbook</span>
+        </button>
+
+        <button class="nav-button" type="button" data-target="shrines-drawer" aria-expanded="false">
+          <span class="nav-icon" aria-hidden="true">♡</span>
+          <span class="nav-label">shrines</span>
+        </button>
+
+        <button class="nav-button" type="button" data-target="links-drawer" aria-expanded="false">
+          <span class="nav-icon" aria-hidden="true">◎</span>
+          <span class="nav-label">links</span>
+        </button>
+
+        <button class="nav-button" type="button" data-target="tips-drawer" aria-expanded="false">
+          <span class="nav-icon" aria-hidden="true">₿</span>
+          <span class="nav-label">tips!!</span>
+        </button>
+      </nav>
+
+      <section class="drawer-stack" aria-label="site sections">
+        <div class="drawer-shell" id="about-drawer">
+          <div class="drawer-inner">
+            <article class="drawer">
+              <div class="drawer-header">
+                <span>ABOUT.RUYA</span>
+                <span>01</span>
+              </div>
+              <div class="drawer-content">
+                <p>Hiii &lt;3 I'm Rüya. This is placeholder copy while I figure out how to explain myself without sounding like a LinkedIn profile possessed by a Tamagotchi.</p>
+                <p>I like machine learning, theology + Catholic mysticism, psychology, natural medicine and pharmacology, old internet junk, strange attractors, and building little things I may or may not ever publish.</p>
+                <ul class="fake-list">
+                  <li>she/her</li>
+                  <li>vegan 🌱</li>
+                  <li>professional rabbit-hole finder</li>
+                </ul>
+                <p class="tiny">[ real bio coming soon!! ]</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="drawer-shell" id="guestbook-drawer">
+          <div class="drawer-inner">
+            <article class="drawer">
+              <div class="drawer-header">
+                <span>GUESTBOOK.EXE</span>
+                <span>02</span>
+              </div>
+              <div class="drawer-content">
+                <p>Sign my guestbook!! Humans, bots, and AI agents are all welcome and encouraged to leave a note.</p>
+
+                <form class="form-grid" id="guestbook-form">
+                  <label>
+                    name / username
+                    <input type="text" name="name" maxlength="48" placeholder="who r u">
+                  </label>
+
+                  <label>
+                    message
+                    <textarea name="message" maxlength="500" placeholder="say hi :)"></textarea>
+                  </label>
+
+                  <button class="retro-button" type="submit">SIGN IT!!</button>
+                  <div class="tiny" id="guestbook-status" role="status">sample form only — backend comes later.</div>
+                </form>
+
+                <button class="text-link-button" type="button" id="open-guestbook-log">
+                  &gt; view previous signs
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="drawer-shell" id="shrines-drawer">
+          <div class="drawer-inner">
+            <article class="drawer">
+              <div class="drawer-header">
+                <span>SHRINES/</span>
+                <span>03</span>
+              </div>
+              <div class="drawer-content">
+                <p>tiny pages for things I love way too much.</p>
+                <div class="link-stack">
+                  <a class="link-card" href="#" onclick="return false;">♡ CHAPPIE — under construction</a>
+                  <a class="link-card" href="#" onclick="return false;">♡ UNDERTALE / DELTARUNE — under construction</a>
+                  <a class="link-card" href="#" onclick="return false;">♡ CHAOS MATH — under construction</a>
+                </div>
+                <p class="tiny">more shrines will appear whenever I get emotionally hijacked by a new obsession.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="drawer-shell" id="links-drawer">
+          <div class="drawer-inner">
+            <article class="drawer">
+              <div class="drawer-header">
+                <span>LINKS.HTML</span>
+                <span>04</span>
+              </div>
+              <div class="drawer-content">
+                <p class="tiny">places worth clicking before my socials:</p>
+                <div class="link-stack">
+                  <a class="link-card" href="#" onclick="return false;">♥ St. Vincent de Paul — donation link placeholder</a>
+                  <a class="link-card" href="#" onclick="return false;">♥ Save the Chimps — donation link placeholder</a>
+                </div>
+
+                <p class="tiny" style="margin-top:14px;">find me elsewhere:</p>
+                <div class="link-stack">
+                  <a class="link-card" href="#" onclick="return false;">GitHub / ruya-exe</a>
+                  <a class="link-card" href="#" onclick="return false;">social link placeholder</a>
+                  <a class="link-card" href="#" onclick="return false;">another one probably</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="drawer-shell" id="tips-drawer">
+          <div class="drawer-inner">
+            <article class="drawer">
+              <div class="drawer-header">
+                <span>TIPS!!</span>
+                <span>05</span>
+              </div>
+              <div class="drawer-content">
+                <p>Want to throw a few sats at my weird little corner of the internet?</p>
+                <div class="link-card">⚡ lightning address / wallet placeholder</div>
+                <p class="tiny">QR code + copy button can live here later.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        yipee!!! • built somewhere on the wired
+      </footer>
+    </main>
+  </div>
+
+  <dialog id="guestbook-log" aria-labelledby="guestbook-log-title">
+    <div class="dialog-titlebar">
+      <span id="guestbook-log-title">GUESTBOOK.LOG</span>
+      <button class="dialog-close" type="button" id="close-guestbook-log" aria-label="Close guestbook">×</button>
+    </div>
+
+    <div class="dialog-body">
+      <div class="guest-entry">
+        <div class="guest-meta">
+          <span>#0003 mothbot</span>
+          <span>09.18.2026</span>
+        </div>
+        <div>cool website. excellent spider habitat.</div>
+      </div>
+
+      <div class="guest-entry">
+        <div class="guest-meta">
+          <span>#0002 definitely-a-human</span>
+          <span>09.18.2026</span>
+        </div>
+        <div>hello from the internet!!!</div>
+      </div>
+
+      <div class="guest-entry">
+        <div class="guest-meta">
+          <span>#0001 system</span>
+          <span>09.18.2026</span>
+        </div>
+        <div>guestbook initialized...</div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -149,15 +149,12 @@ main {
   height: 275px;
 }
 
-.muffet-placeholder {
+.muffet-sprite {
   position: absolute;
   top: 8px;
   right: 10px;
-  color: var(--muted);
-  font-size: 9px;
-  letter-spacing: 0.04em;
-  writing-mode: vertical-rl;
-  opacity: 0.65;
+  width: 72px;
+  image-rendering: pixelated;
 }
 
 .web-footer {

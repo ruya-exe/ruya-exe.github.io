@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050505">
   <meta name="description" content="RÜYA.EXE — a weird little personal corner of the web.">
   <title>RÜYA.EXE</title>
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
@@ -231,8 +231,10 @@
               </div>
               <div class="drawer-content">
                 <p>I have graciously given you the opportunity to give me money!! :D</p>
-                <div class="link-card">⚡ ...jk, not yet... placeholder</div>
-                <p class="tiny">QR code + copy button can live here later.</p>
+                <img class="tips-qr" src="tips-qr.png" alt="QR code: tip sats over Lightning">
+                <div class="link-card">⚡ <span id="ln-address">selected-guppy@lexe.app</span></div>
+                <button class="copy-btn" id="copy-ln" type="button">copy address</button>
+                <p class="tiny">scan the QR or copy the lightning address.</p>
               </div>
             </article>
           </div>
@@ -278,7 +280,7 @@
     </div>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
   <script src="guestbook-live.js"></script>
 </body>
 </html>

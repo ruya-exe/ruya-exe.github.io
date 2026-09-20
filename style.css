@@ -123,6 +123,7 @@ main {
   border-radius: var(--radius);
   overflow: hidden;
   background: #000;
+  position: relative;
 }
 
 .panel-title {
@@ -151,7 +152,7 @@ main {
 
 .muffet-sprite {
   position: absolute;
-  top: 8px;
+  top: 18px;
   right: 10px;
   width: 72px;
   image-rendering: pixelated;

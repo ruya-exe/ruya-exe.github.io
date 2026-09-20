@@ -152,9 +152,10 @@ main {
 
 .muffet-sprite {
   position: absolute;
-  top: 6px;
+  top: 31px;
   right: 10px;
   width: 72px;
+  z-index: 5;
   image-rendering: pixelated;
 }
 

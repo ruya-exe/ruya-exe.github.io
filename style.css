@@ -88,6 +88,9 @@ main {
   margin-bottom: 4px;
 }
 
+.pfp-img {
+  object-fit: cover;
+}
 .avatar-placeholder {
   width: 52px;
   aspect-ratio: 1;

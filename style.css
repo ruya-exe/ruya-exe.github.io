@@ -379,6 +379,8 @@ textarea {
   text-align: center;
   font-size: 9px;
 }
+.agent-dot { opacity:.28; font-size:.85em; text-decoration:none; }
+.agent-dot:hover { opacity:1; }
 
 dialog {
   width: min(calc(100vw - 28px), 390px);

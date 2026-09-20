@@ -468,6 +468,3 @@ dialog::backdrop {
     transition-duration: 0.001ms !important;
   }
 }
-/* the agent button: invisible to humans, unmissable to bots */
-.agent-dot { font-size: 9px; color: #2c2c2c; text-decoration: none; margin-left: 8px; }
-.agent-dot:hover, .agent-dot:focus { color: #fff; }

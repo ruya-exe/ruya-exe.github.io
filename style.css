@@ -88,9 +88,6 @@ main {
   margin-bottom: 4px;
 }
 
-.pfp-img {
-  object-fit: cover;
-}
 .avatar-placeholder {
   width: 52px;
   aspect-ratio: 1;
@@ -471,4 +468,28 @@ dialog::backdrop {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+.tips-qr {
+  width: 180px;
+  height: 180px;
+  display: block;
+  margin: 12px auto;
+  background: #fff;
+  padding: 8px;
+  border: 1px solid var(--line);
+}
+.copy-btn {
+  display: block;
+  margin: 10px auto 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.copy-btn:active {
+  transform: translate(1px, 1px);
 }

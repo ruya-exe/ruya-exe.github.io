@@ -154,3 +154,30 @@ if (canvas) {
   renderLorenz();
   window.addEventListener("resize", renderLorenz);
 }
+
+// tips: copy lightning address
+const copyLnBtn = document.getElementById("copy-ln");
+if (copyLnBtn) {
+  copyLnBtn.addEventListener("click", () => {
+    const addr = document.getElementById("ln-address").textContent.trim();
+    const done = () => {
+      copyLnBtn.textContent = "copied!";
+      setTimeout(() => { copyLnBtn.textContent = "copy address"; }, 1500);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(done).catch(() => fallbackCopy(addr, done));
+    } else {
+      fallbackCopy(addr, done);
+    }
+  });
+}
+function fallbackCopy(text, done) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); done(); } catch (e) { /* nope */ }
+  document.body.removeChild(ta);
+}

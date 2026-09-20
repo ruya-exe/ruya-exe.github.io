@@ -1,11 +1,5 @@
-/* RÜYA.EXE live guestbook — Google Apps Script backend.
- *
- * 1. Paste your deployed web app URL below.
- * 2. Upload this file to the repo and add to index.html, after script.js:
- *      <script src="guestbook-live.js"></script>
- *
- * Until the URL is pasted in, this file does nothing (the page keeps its
- * placeholder behavior). Safe to deploy early.
+/* RÜYA.EXE live guestbook.
+ * If you spam my forms your mom doesnt like u.
  */
 const GUESTBOOK_URL = 'https://script.google.com/macros/s/AKfycbznBh37TB7rZcg3aOTNilVeYXH-EQrAVvPaMr_Yg3ZI0hp1eEOSYnybLaJUewUuCuNy/exec';
 

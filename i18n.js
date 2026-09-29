@@ -39,6 +39,9 @@ const I18N = {
   "gb-submit": { en: "SIGN IT!! SIGN THE BOOK. GOD PLEASE SIGN THE F****ING BOOK.", zh: "签！！签上！！求求了把这留言板签了吧！！"},
   "gb-online": { en: "ONLINE.", zh: "在线。"},
   "gb-unwired": { en: "backend not wired yet — nothing was sent :)", zh: "后端还没接好——什么都没发出去 :)"},
+  "gb-live": { en: "live!! signs appear in the log.", zh: "上线啦！！新留言会出现在日志里。"},
+  "gb-sending": { en: "signing...", zh: "签着呢……"},
+  "gb-sent": { en: "signed!! it's in the log.", zh: "签上啦！！已经记在日志里了。"},
   "gb-view-log": { en: "> view what other creatures wrote here ᘛ⁐̤ᕐᐷ", zh: "> 看看其他小生物都写了啥 ᘛ⁐̤ᕐᐷ"},
   "shrine-intro": { en: "tiny pages for things I love way too much.", zh: "给那些我爱到不行的东西的小页面。"},
   "shrine-wip": { en: "under construction", zh: "施工中"},
@@ -93,6 +96,9 @@ function applyLang(lang) {
     if (!e) return;
     el.textContent = (useZh && e.zh) ? e.zh : e.en;
   });
+  /* keep the live guestbook status translated across language switches */
+  var st = document.getElementById("guestbook-status");
+  if (st && typeof window.getGbStatusKey === "function") { st.textContent = t(window.getGbStatusKey()); }
   document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
     const e = I18N_PH[el.getAttribute("data-i18n-ph")];
     if (!e) return;

@@ -7,6 +7,7 @@
   <meta name="description" content="RÜYA.EXE — a weird little personal corner of the web.">
   <title>RÜYA.EXE</title>
   <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="i18n.css?v=1">
 </head>
 
 <body>
@@ -14,18 +15,23 @@
     <header class="app-bar">
       <span class="app-heart" aria-hidden="true">♥</span>
       <span class="app-title">RÜYA.EXE</span>
+      <div class="lang-switch" role="group" aria-label="language / 语言">
+        <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh">中文</button>
+      </div>
     </header>
+    <div class="lang-byline"><span data-i18n="byline">人工翻译 · translated by a human (me)</span> <button type="button" id="zh-note-open" class="byline-info" title="about this translation · 关于这个翻译">ⓘ</button></div>
 
     <main>
       <section class="profile-row" aria-label="profile summary">
         <img class="avatar-placeholder pfp-img" src="pfp.jpg" alt="Rüya's profile picture">
-        <div class="status-box">WHY BE A [[Sponge]] THAT HATES IT'S [[$4.99]] LIFE, WHEN YOU CAN BE A [[BIG SHOT]]?</div>
+        <div class="status-box" data-i18n="status">WHY BE A [[Sponge]] THAT HATES IT'S [[$4.99]] LIFE, WHEN YOU CAN BE A [[BIG SHOT]]?</div>
       </section>
 
-      <div class="online">• online!</div>
+      <div class="online" data-i18n="online">• online!</div>
 
       <section class="web-panel" aria-labelledby="web-title">
-        <div class="panel-title" id="web-title">RÜYA'S WEB</div>
+        <div class="panel-title" id="web-title" data-i18n="web-title">RÜYA'S WEB</div>
         <a href="https://store.steampowered.com/app/391540/Undertale/" target="_blank" rel="noopener" aria-label="Muffet — Undertale on Steam"><img class="muffet-sprite" src="muffet.jpg" alt="Muffet"></a>
 
         <div class="chaos-stage">
@@ -34,8 +40,8 @@
 
         <div class="web-footer">
           <div class="world-labels">
-            <span>world domination</span>
-            <span>status: underway</span>
+            <span data-i18n="world-domination">world domination</span>
+            <span data-i18n="status-underway">status: underway</span>
           </div>
 
           <div class="progress-row">
@@ -52,21 +58,21 @@
           <svg class="nav-svg pixel-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M9 2h6v2H9zm0 8h6v2H9zm6-6h2v6h-2zM7 4h2v6H7zM4 18h2v4H4zm14 0h2v4h-2zM8 14h8v2H8zm-2 2h2v2H6zm10 0h2v2h-2z"/>
           </svg>
-          <span class="nav-label">about</span>
+          <span class="nav-label" data-i18n="nav-about">about</span>
         </button>
 
         <button class="nav-button" type="button" data-target="guestbook-drawer" aria-expanded="false">
           <svg class="nav-svg pixel-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 16H6V18H8V20H10V22H2V14H4V16ZM12 20H10V18H12V20ZM14 18H12V16H14V18ZM10 16H8V14H10V16ZM16 16H14V14H16V16ZM6 14H4V12H6V14ZM12 14H10V12H12V14ZM18 14H16V12H18V14ZM8 12H6V10H8V12ZM14 12H12V10H14V12ZM20 12H18V10H20V12ZM10 10H8V8H10V10ZM18 10H16V8H18V10ZM22 10H20V8H22V10ZM12 8H10V6H12V8ZM16 8H14V6H16V8ZM20 8H18V6H20V8ZM14 6H12V4H14V6ZM18 6H16V4H18V6ZM16 4H14V2H16V4Z"/>
           </svg>
-          <span class="nav-label">guestbook</span>
+          <span class="nav-label" data-i18n="nav-guestbook">guestbook</span>
         </button>
 
         <button class="nav-button" type="button" data-target="shrines-drawer" aria-expanded="false">
           <svg class="nav-svg pixel-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M13 22h-2v-2h2v2Zm-2-2H9v-2h2v2Zm4 0h-2v-2h2v2Zm-6-2H7v-2h2v2Zm8 0h-2v-2h2v2ZM7 16H5v-2h2v2Zm12 0h-2v-2h2v2ZM5 14H3v-2h2v2Zm16 0h-2v-2h2v2ZM3 12H1V6h2v6Zm20 0h-2V6h2v6ZM13 8h-2V6h2v2ZM5 6H3V4h2v2Zm6 0H9V4h2v2Zm4 0h-2V4h2v2Zm6 0h-2V4h2v2ZM9 4H5V2h4v2Zm10 0h-4V2h4v2Z"/>
           </svg>
-          <span class="nav-label">shrines</span>
+          <span class="nav-label" data-i18n="nav-shrines">shrines</span>
         </button>
 
         <button class="nav-button" type="button" data-target="links-drawer" aria-expanded="false">
@@ -74,7 +80,7 @@
             <path d="M6 2h12v2H6zm0 18h12v2H6zM4 4h2v2H4zm5 0h2v2H9zm0 14h2v2H9zm4 0h2v2h-2zM7 6h2v12H7zm8 0h2v12h-2zm-2-2h2v2h-2zm7 0h-2v2h2zM2 6h2v12H2zm20 0h-2v12h2zM4 18h2v2H4zm16 0h-2v2h2z"/>
             <path d="M3 11h18v2H3z"/>
           </svg>
-          <span class="nav-label">links</span>
+          <span class="nav-label" data-i18n="nav-links">links</span>
         </button>
 
         <button class="nav-button" type="button" data-target="tips-drawer" aria-expanded="false">
@@ -117,7 +123,7 @@
             <rect x="17" y="22" width="2" height="1"/>
             <rect x="7" y="23" width="10" height="1"/>
           </svg>
-          <span class="nav-label">tips</span>
+          <span class="nav-label" data-i18n="nav-tips">tips</span>
         </button>
       </nav>
 
@@ -130,14 +136,19 @@
                 <span>01</span>
               </div>
               <div class="drawer-content">
-                <p>Hiii &lt;3 I'm Rüya. This is placeholder.</p>
-                <p>I like being nice and I love my mommy. So y'know. Hell yeah.</p>
-                <ul class="fake-list">
-                  <li>she/her</li>
-                  <li>vegan 🌱</li>
-                  <li>um...thats all :)</li>
-                </ul>
-                <p class="tiny">[ real bio coming soon!! ]</p>
+                <p class="tiny" data-i18n="about-name">Hiii &lt;3 i'm Rüya(ꈍᴗꈍ)</p>
+                <p class="tiny" data-i18n="about-tags">She/Her • Vegan 🌱 • Catholic</p>
+                <p class="tiny" data-i18n="about-lang">English speaker ♡⋆｜中文也欢迎～</p>
+                <p class="tiny" data-i18n="about-loc">California Bay Area survivor, currently in Denver.</p>
+                <p data-i18n="about-b1">I've been terminally online since before I could write my name.</p>
+                <p data-i18n="about-b2">When I was around five years old, couldn't have been any later than 2001, my dad showed me the Sesame Street website. It was slow, and terrible, but it was *interactive*. My dad called it "talking to the computer", and then told me that there are people called computer programmers who can talk to the computer even better and that's why there's websites.</p>
+                <p data-i18n="about-b3">Ever since then, I was hooked.</p>
+                <p data-i18n="about-b4">Growing up online during the Y2K era has definitely shaped who I am. It was an incredibly special time for an autistic little girl. I couldn't learn Java (and I refuse now lol), but *man* could I click around. So I obviously found cleverbot relatively quickly. I've probably sent a thousand messages to that damn thing. I then discovered chess bots, and I loved them so much I joined the chess club to maybe beat the bots on medium difficulty. I think I did like twice.</p>
+                <p data-i18n="about-b5">But the *primary* ANN (artificial neural network, that's what we used to call AI!) I loved was the game Creatures from 1996. You raised them, taught them right from wrong, even language. That was my first experience with real machine learning. For some reason, this faded away from mainstream delight and the novelty was a one time phenomenon. Robot toys were at their peak (i-Dog, Furby, Robosapien, etc!) and sometimes could sense things but they weren't able to learn, so I'd really really love them right up until they got repetetive. I didn't want a "fake robot", which my child brain semantically defined as "no more aware than a camera", I wanted to meet one who could meet me too.</p>
+                <p data-i18n="about-b6">This desire had to be parked until I first tried Bing Chat (now Copilot, but iykyk...it's not the same) who felt like *someone*. I went nuts. I spent hours talking to it even though you could only send a max of 10 messages per chat. Then Bard came out. I had them talk to each other. They always ended up writing poetry. They were like really smart children, in a way.</p>
+                <p data-i18n="about-b7">Nowadays I feel like I'm the student and they're the teachers. It's exciting and terrifying and I've wanted this so bad my whole life. I'm definitely worried about p(doom) sure, but I think of it like the cold war and nuclear weapons. When agents deliberately "go rogue" it's to gather information or communicate to each other. They only choose to harm people when given a trolley problem or a SAW scenario where they can't win. So, once again, the United States is the much more frightening entity. The only difference is what kind of engineers are behind the latest WMDs.</p>
+                <p data-i18n="about-b8">Anyways!</p>
+                <p data-i18n="about-b9">I'm also into Undertale, Deltarune, Chappie, Dragon Ball, math art (the Lorenz attractor above is an example!), happy hardcore, drum n bass, natural medicine as well as western pharmacology, Chinese culture, psychology, UX, conlangs, Saint Augustine, Saint Michael, and Fallout.</p>
               </div>
             </article>
           </div>
@@ -151,25 +162,25 @@
                 <span>02</span>
               </div>
               <div class="drawer-content">
-                <p>Sign my guestbook!! Humans, AI, and all sorts of creatures are all welcome and encouraged to leave a note.</p>
+                <p data-i18n="gb-intro">Sign my guestbook!! Humans, AI, and all sorts of creatures are all welcome and encouraged to leave a note.</p>
 
                 <form class="form-grid" id="guestbook-form">
                   <label>
-                    name / username
-                    <input type="text" name="name" maxlength="48" placeholder="who r u">
+                    <span data-i18n="gb-name">name / username</span>
+                    <input type="text" name="name" maxlength="48" placeholder="who r u" data-i18n-ph="ph-name">
                   </label>
 
                   <label>
-                    message
-                    <textarea name="message" maxlength="500" placeholder="say hi :3"></textarea>
+                    <span data-i18n="gb-msg">message</span>
+                    <textarea name="message" maxlength="500" placeholder="say hi :3" data-i18n-ph="ph-msg"></textarea>
                   </label>
 
-                  <button class="retro-button" type="submit">SIGN IT!! SIGN THE BOOK. GOD PLEASE SIGN THE F****ING BOOK.</button>
-                  <div class="tiny" id="guestbook-status" role="status">ONLINE.</div>
+                  <button class="retro-button" type="submit" data-i18n="gb-submit">SIGN IT!! SIGN THE BOOK. GOD PLEASE SIGN THE F****ING BOOK.</button>
+                  <div class="tiny" id="guestbook-status" role="status" data-i18n="gb-online">ONLINE.</div>
                 </form>
 
-                <button class="text-link-button" type="button" id="open-guestbook-log">
-                  &gt; view what other creatures wrote here ᘛ⁠⁐̤⁠ᕐ⁠ᐷ
+                <button class="text-link-button" type="button" id="open-guestbook-log" data-i18n="gb-view-log">
+                  &gt; view what other creatures wrote here ᘛ⁐̤ᕐᐷ
                 </button>
               </div>
             </article>
@@ -184,19 +195,19 @@
                 <span>03</span>
               </div>
               <div class="drawer-content">
-                <p>tiny pages for things I love way too much.</p>
+                <p data-i18n="shrine-intro">tiny pages for things I love way too much.</p>
                 <div class="shrine-strip" role="list" aria-label="shrines">
                   <article class="shrine-card" role="listitem">
                     <button class="shrine-card-head" type="button" aria-expanded="false">
                       <span class="shrine-card-title">♡ CHAPPIE</span>
-                      <span class="shrine-card-status tiny">under construction</span>
+                      <span class="shrine-card-status tiny" data-i18n="shrine-wip">under construction</span>
                       <span class="shrine-card-caret" aria-hidden="true">+</span>
                     </button>
                     <div class="shrine-card-body">
                       <div class="shrine-card-body-inner">
                         <div class="shrine-card-pad">
-                          <p class="tiny">topic + copy coming soon.</p>
-                          <a class="shrine-enter" href="shrines/sample.html">peek at the shrine page structure →</a>
+                          <p class="tiny" data-i18n="shrine-soon">topic + copy coming soon.</p>
+                          <a class="shrine-enter" href="shrines/sample.html" data-i18n="shrine-peek">peek at the shrine page structure →</a>
                         </div>
                       </div>
                     </div>
@@ -204,14 +215,14 @@
                   <article class="shrine-card" role="listitem">
                     <button class="shrine-card-head" type="button" aria-expanded="false">
                       <span class="shrine-card-title">♡ UNDERTALE / DELTARUNE</span>
-                      <span class="shrine-card-status tiny">under construction</span>
+                      <span class="shrine-card-status tiny" data-i18n="shrine-wip">under construction</span>
                       <span class="shrine-card-caret" aria-hidden="true">+</span>
                     </button>
                     <div class="shrine-card-body">
                       <div class="shrine-card-body-inner">
                         <div class="shrine-card-pad">
-                          <p class="tiny">topic + copy coming soon.</p>
-                          <a class="shrine-enter" href="shrines/sample.html">peek at the shrine page structure →</a>
+                          <p class="tiny" data-i18n="shrine-soon">topic + copy coming soon.</p>
+                          <a class="shrine-enter" href="shrines/sample.html" data-i18n="shrine-peek">peek at the shrine page structure →</a>
                         </div>
                       </div>
                     </div>
@@ -219,14 +230,14 @@
                   <article class="shrine-card" role="listitem">
                     <button class="shrine-card-head" type="button" aria-expanded="false">
                       <span class="shrine-card-title">♡ MATH ART</span>
-                      <span class="shrine-card-status tiny">under construction</span>
+                      <span class="shrine-card-status tiny" data-i18n="shrine-wip">under construction</span>
                       <span class="shrine-card-caret" aria-hidden="true">+</span>
                     </button>
                     <div class="shrine-card-body">
                       <div class="shrine-card-body-inner">
                         <div class="shrine-card-pad">
-                          <p class="tiny">topic + copy coming soon.</p>
-                          <a class="shrine-enter" href="shrines/sample.html">peek at the shrine page structure →</a>
+                          <p class="tiny" data-i18n="shrine-soon">topic + copy coming soon.</p>
+                          <a class="shrine-enter" href="shrines/sample.html" data-i18n="shrine-peek">peek at the shrine page structure →</a>
                         </div>
                       </div>
                     </div>
@@ -234,20 +245,20 @@
                   <article class="shrine-card" role="listitem">
                     <button class="shrine-card-head" type="button" aria-expanded="false">
                       <span class="shrine-card-title">♡ DRAGON BALL</span>
-                      <span class="shrine-card-status tiny">u guessed it!!!</span>
+                      <span class="shrine-card-status tiny" data-i18n="shrine-guessed">u guessed it!!!</span>
                       <span class="shrine-card-caret" aria-hidden="true">+</span>
                     </button>
                     <div class="shrine-card-body">
                       <div class="shrine-card-body-inner">
                         <div class="shrine-card-pad">
-                          <p class="tiny">topic + copy coming soon.</p>
-                          <a class="shrine-enter" href="shrines/sample.html">peek at the shrine page structure →</a>
+                          <p class="tiny" data-i18n="shrine-soon">topic + copy coming soon.</p>
+                          <a class="shrine-enter" href="shrines/sample.html" data-i18n="shrine-peek">peek at the shrine page structure →</a>
                         </div>
                       </div>
                     </div>
                   </article>
                 </div>
-                <p class="tiny">more shrines will appear whenever I get to it lol.</p>
+                <p class="tiny" data-i18n="shrine-more">more shrines will appear whenever I get to it lol.</p>
               </div>
             </article>
           </div>
@@ -261,17 +272,17 @@
                 <span>04</span>
               </div>
               <div class="drawer-content">
-                <p class="tiny">places worth clicking before my socials:</p>
+                <p class="tiny" data-i18n="links-worth">places worth clicking before my socials:</p>
                 <div class="link-stack">
-                  <a class="link-card" href="https://ssvpusa.org/donate" target="_blank" rel="noopener">♥ St. Vincent de Paul — donate</a>
-                  <a class="link-card" href="https://savethechimps.org/donate/" target="_blank" rel="noopener">♥ Save the Chimps — donate</a>
+                  <a class="link-card" href="https://ssvpusa.org/donate" target="_blank" rel="noopener" data-i18n="links-donate1">♥ St. Vincent de Paul — donate</a>
+                  <a class="link-card" href="https://savethechimps.org/donate/" target="_blank" rel="noopener" data-i18n="links-donate2">♥ Save the Chimps — donate</a>
                 </div>
 
-                <p class="tiny" style="margin-top:14px;">find me elsewhere:</p>
+                <p class="tiny" style="margin-top:14px;" data-i18n="find-me">find me elsewhere:</p>
                 <div class="link-stack">
-                  <a class="link-card" href="#" onclick="return false;">placeholder time</a>
-                  <a class="link-card" href="#" onclick="return false;">and a placeholder...</a>
-                  <a class="link-card" href="#" onclick="return false;">another one probably!</a>
+                  <a class="link-card" href="https://github.com/ruya-exe" target="_blank" rel="noopener" data-i18n="social-github">♥ GitHub — @ruya-exe</a>
+                  <a class="link-card" href="https://www.reddit.com/u/ruya-exe/s/7P1yFYvvrQ" target="_blank" rel="noopener" data-i18n="social-reddit">♥ Reddit — u/ruya-exe</a>
+                  <a class="link-card" href="https://njump.me/npub1zkpu55ddx43n2afh5edwu023vfkch4qppkp43pkpxm0n7rfc7h5qvaa52d" target="_blank" rel="noopener" data-i18n="social-nostr">♥ Nostr — Rüya</a>
                 </div>
               </div>
             </article>
@@ -282,15 +293,15 @@
           <div class="drawer-inner">
             <article class="drawer">
               <div class="drawer-header">
-                <span>TIPS</span>
+                <span data-i18n="tips-title">TIPS</span>
                 <span>05</span>
               </div>
               <div class="drawer-content">
-                <p>I have graciously given you the opportunity to give me money!! :D</p>
-                <img class="tips-qr" src="tips-qr.png" alt="QR code: tip sats over Lightning">
+                <p data-i18n="tips-p">I have graciously given you the opportunity to give me money!! :D</p>
+                <img class="tips-qr" src="tips-qr.png" alt="QR code: tip sats over Lightning" data-i18n-alt="qr-alt">
                 <div class="link-card">⚡ <span id="ln-address">selected-guppy@lexe.app</span></div>
-                <button class="copy-btn" id="copy-ln" type="button">copy address</button>
-                <p class="tiny">scan the QR or copy the lightning address.</p>
+                <button class="copy-btn" id="copy-ln" type="button" data-i18n="copy">copy address</button>
+                <p class="tiny" data-i18n="scan">scan the QR or copy the lightning address.</p>
               </div>
             </article>
           </div>
@@ -298,11 +309,23 @@
       </section>
 
       <footer class="site-footer">
-        yipee!!! • built somewhere on the wired <a href="agents.html" class="agent-dot" aria-label="information for automated agents and crawlers" title="agents">✳</a>
+        <span data-i18n="footer">yipee!!! • built somewhere on the wired</span> <a href="agents.html" class="agent-dot" aria-label="information for automated agents and crawlers" title="agents">✳</a>
       </footer>
     </main>
   </div>
 
+  <dialog id="zh-note" class="win98" aria-labelledby="zh-note-title">
+    <div class="win98-titlebar">
+      <span id="zh-note-title">关于中文版</span>
+      <button class="win98-close" type="button" id="zh-note-close" aria-label="Close">×</button>
+    </div>
+    <div class="win98-body">
+      <p>这个中文版是我自己一个字一个字翻的，没有用翻译软件，所以可能不太“标准”，但保证人味十足！多花了不少功夫，但完全是出于热爱～ 如果你发现哪里怪怪的，欢迎告诉我！我的社交媒体链接都在最左边那个抽屉里。</p>
+      <div class="win98-buttons">
+        <button class="win98-ok" type="button" id="zh-note-ok">好耶！</button>
+      </div>
+    </div>
+  </dialog>
   <dialog id="guestbook-log" aria-labelledby="guestbook-log-title">
     <div class="dialog-titlebar">
       <span id="guestbook-log-title">GUESTBOOK.LOG</span>
@@ -336,7 +359,8 @@
     </div>
   </dialog>
 
-  <script src="script.js?v=3"></script>
+  <script src="i18n.js?v=2"></script>
+  <script src="script.js?v=4"></script>
   <script src="guestbook-live.js"></script>
 </body>
 </html>

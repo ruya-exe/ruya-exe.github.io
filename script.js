@@ -181,3 +181,18 @@ function fallbackCopy(text, done) {
   try { document.execCommand("copy"); done(); } catch (e) { /* nope */ }
   document.body.removeChild(ta);
 }
+
+// shrine hub: accordion cards in the side-scroll strip (one open at a time)
+const shrineCards = [...document.querySelectorAll(".shrine-card")];
+shrineCards.forEach((card) => {
+  const head = card.querySelector(".shrine-card-head");
+  head?.addEventListener("click", () => {
+    const opening = !card.classList.contains("open");
+    shrineCards.forEach((c) => {
+      c.classList.remove("open");
+      c.querySelector(".shrine-card-head")?.setAttribute("aria-expanded", "false");
+    });
+    card.classList.toggle("open", opening);
+    head.setAttribute("aria-expanded", String(opening));
+  });
+});

@@ -46,7 +46,7 @@ const guestbookStatus = document.getElementById("guestbook-status");
 
 guestbookForm?.addEventListener("submit", (event) => {
   event.preventDefault();
-  guestbookStatus.textContent = "backend not wired yet — nothing was sent :)";
+  guestbookStatus.textContent = (typeof t === "function") ? t("gb-unwired") : "backend not wired yet — nothing was sent :)";
 });
 
 // Tiny dependency-free Lorenz attractor renderer.
@@ -161,8 +161,8 @@ if (copyLnBtn) {
   copyLnBtn.addEventListener("click", () => {
     const addr = document.getElementById("ln-address").textContent.trim();
     const done = () => {
-      copyLnBtn.textContent = "copied!";
-      setTimeout(() => { copyLnBtn.textContent = "copy address"; }, 1500);
+      copyLnBtn.textContent = (typeof t === "function") ? t("copied") : "copied!";
+      setTimeout(() => { copyLnBtn.textContent = (typeof t === "function") ? t("copy") : "copy address"; }, 1500);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(addr).then(done).catch(() => fallbackCopy(addr, done));

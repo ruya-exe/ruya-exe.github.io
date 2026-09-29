@@ -1,0 +1,120 @@
+/* ---- language toggle + win98 translation-note dialog ---- */
+
+.lang-switch {
+  margin-left: auto;
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.lang-btn.is-active {
+  background: #1d1d1d;
+  color: var(--text);
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--line-soft);
+}
+
+.lang-byline {
+  text-align: center;
+  font-size: 9px;
+  color: var(--muted);
+  padding: 7px 12px 0;
+  letter-spacing: 0.02em;
+}
+
+.byline-info {
+  display: inline-grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: 1px;
+}
+
+/* little grey early-2000s window box */
+#zh-note {
+  background: #c0c0c0;
+  color: #000;
+  border: 2px outset #dfdfdf;
+  border-radius: 0;
+  padding: 3px;
+  width: min(calc(100vw - 56px), 340px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.win98-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 4px 3px 8px;
+  margin-bottom: 3px;
+  letter-spacing: 0.02em;
+}
+
+.win98-close {
+  border: 2px outset #dfdfdf;
+  background: #c0c0c0;
+  color: #000;
+  width: 22px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.win98-close:active {
+  border-style: inset;
+}
+
+.win98-body {
+  padding: 10px 10px 12px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.win98-body p {
+  margin: 0 0 12px;
+}
+
+.win98-buttons {
+  text-align: center;
+}
+
+.win98-ok {
+  border: 2px outset #dfdfdf;
+  background: #c0c0c0;
+  color: #000;
+  font-size: 12px;
+  padding: 4px 28px;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.win98-ok:active {
+  border-style: inset;
+}

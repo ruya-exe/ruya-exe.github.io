@@ -3,6 +3,17 @@
  */
 const GUESTBOOK_URL = 'https://script.google.com/macros/s/AKfycbznBh37TB7rZcg3aOTNilVeYXH-EQrAVvPaMr_Yg3ZI0hp1eEOSYnybLaJUewUuCuNy/exec';
 
+/* Localized live status. setGbStatus keeps the current status key so a
+ * language switch re-translates the active state instead of resetting it.
+ * (strings live in the I18N dict in i18n.js; t() translates them.) */
+let gbStatusKey = "gb-online";
+function setGbStatus(key) {
+  gbStatusKey = key;
+  var el = document.getElementById("guestbook-status");
+  if (el) el.textContent = (typeof t === "function") ? t(key) : key;
+}
+window.getGbStatusKey = function () { return gbStatusKey; };
+
 (function () {
   if (!GUESTBOOK_URL || GUESTBOOK_URL.indexOf('PASTE_YOUR') === 0) return; // not configured yet
 
@@ -50,19 +61,19 @@ const GUESTBOOK_URL = 'https://script.google.com/macros/s/AKfycbznBh37TB7rZcg3aO
       ev.preventDefault();
       const body = new URLSearchParams();
       for (const [k, v] of new FormData(form).entries()) body.append(k, v);
-      if (status) status.textContent = 'signing...';
+      setGbStatus("gb-sending");
       // Apps Script answers POSTs through a redirect chain, so the response
       // isn't always readable — but the entry lands anyway. Optimistic UI:
       // fire, show success, reload the log (which is the real confirmation).
       try {
         await fetch(GUESTBOOK_URL, { method: 'POST', body });
       } catch (err) { /* network hiccup; the entry usually still landed */ }
-      if (status) status.textContent = "signed!! it's in the log.";
+      setGbStatus("gb-sent");
       form.reset();
       setTimeout(loadEntries, 1500); // give the sheet a beat to commit
     });
   }
 
-  if (status) status.textContent = 'live!! signs appear in the log.';
+  setGbStatus("gb-live");
   loadEntries();
 })();

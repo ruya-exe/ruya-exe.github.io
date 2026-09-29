@@ -493,3 +493,122 @@ dialog::backdrop {
 .copy-btn:active {
   transform: translate(1px, 1px);
 }
+
+/* ---- shrine hub: accordion side-scroll strip of chunky cards ---- */
+.shrine-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 2px 12px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.shrine-card {
+  flex: 0 0 76%;
+  scroll-snap-align: start;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #070707;
+  overflow: hidden;
+}
+.shrine-card-head {
+  width: 100%;
+  min-height: 132px;
+  display: grid;
+  gap: 6px;
+  align-content: center;
+  justify-items: center;
+  padding: 20px 12px;
+  background: var(--panel);
+  color: var(--text);
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.shrine-card-head:active {
+  transform: translate(1px, 1px);
+}
+.shrine-card-title {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.shrine-card-caret {
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 200ms steps(3, end);
+}
+.shrine-card.open .shrine-card-caret {
+  transform: rotate(45deg);
+}
+.shrine-card-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 240ms steps(4, end);
+}
+.shrine-card.open .shrine-card-body {
+  grid-template-rows: 1fr;
+}
+.shrine-card-body-inner {
+  overflow: hidden;
+}
+.shrine-card-pad {
+  padding: 12px;
+}
+.shrine-card-pad p {
+  margin: 0 0 4px;
+}
+.shrine-enter {
+  display: block;
+  margin-top: 8px;
+  border: 1px solid #515151;
+  background: #111;
+  color: var(--text);
+  padding: 9px 11px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,0.08),
+    inset -1px -1px 0 rgba(0,0,0,0.8);
+}
+.shrine-enter:active {
+  transform: translate(1px, 1px);
+}
+
+/* ---- shrine subpage ---- */
+.shrine-back {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 11px;
+  margin-right: 2px;
+}
+.shrine-back:hover {
+  text-decoration: underline;
+}
+.shrine-topic {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  margin: 2px 0 4px;
+}
+.shrine-kicker {
+  margin-bottom: 14px;
+}
+.shrine-page .shrine-slot {
+  margin-bottom: 12px;
+}
+.shrine-slot {
+  border: 1px dashed #4a4a4a;
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.015);
+}
+.shrine-slot-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}

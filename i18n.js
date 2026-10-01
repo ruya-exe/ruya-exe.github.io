@@ -19,6 +19,8 @@ const I18N = {
   "nav-shrines": { en: "shrines", zh: "神龛"},
   "nav-links": { en: "links", zh: "链接"},
   "nav-tips": { en: "tips", zh: "打赏"},
+  "nav-pet": { en: "pet", zh: "宠物"},
+  "pet-caption": { en: "煤球 ♡ my digital familiar. she lives here now.", zh: "煤球 ♡ 我的电子小猫，她住这儿了。"},
   "byline": { en: "人工翻译 · translated by a human (me)", zh: "人工翻译 · translated by a human (me)"},
   "about-name": { en: "Hiii <3 i'm Rüya(ꈍᴗꈍ)", zh: "嗨嗨 <3 我是 Rüya (ꈍᴗꈍ)"},
   "about-tags": { en: "She/Her • Vegan 🌱 • Catholic", zh: "She/Her • 纯素 🌱 • 天主教徒"},

@@ -613,12 +613,18 @@ dialog::backdrop {
   letter-spacing: 0.06em;
 }
 
-.pet-frame {
+.pet-crop {
   width: 314px;
   max-width: 100%;
-  height: auto;
-  aspect-ratio: 314 / 321;
-  display: block;
+  aspect-ratio: 314 / 303;
+  overflow: hidden;
   margin: 12px auto;
   border: 1px solid var(--line);
+}
+.pet-crop .pet-frame {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border: 0;
 }
